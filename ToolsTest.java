@@ -18,12 +18,12 @@ public class ToolsTest{
 
       //test insertion sorts
       int[] array = {8, 10, 5, 87, 56, 12, 54, 23, 100, 1, 7, 99};
-      array = DavesTools.insertionSort(array);
+      array = DavesSearch.insertionSort(array);
       for(int x : array){
          System.out.printf("%d\n",x);
       }
 
-      array = DavesTools.insertionSortD(array);
+      array = DavesSearch.insertionSortD(array);
       for(int x : array){
          System.out.printf("%d\n",x);
       }
