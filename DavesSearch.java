@@ -1,5 +1,5 @@
 /*
- *    FILE: DavesTools.java
+ *    FILE: DavesSearch.java
  *    AUTHOR: David L Patrzeba
  *    E-MAIL: david.patrzeba@gmail.com
  *
@@ -48,8 +48,7 @@ public class DavesSearch{
 
       }//end for loop
 
-      return array;
-   }//end method insertionSort
+   }//end insertionSort
 
    /*
     *     Takes an array of int and sorts it in descending order
@@ -73,10 +72,7 @@ public class DavesSearch{
 
       return array;
 
-   }//end method insertionSortD
+   }//end insertionSortD
 
-
-
-
-}//end of class DavesTools
+}//end DavesSearch
 
