@@ -30,16 +30,16 @@ public class DavesSearch{
 
    /*
     *    Takes an array of int and sorts it in ascending order
-    *    TODO: make method take any type array
+    *
     */
 
-   public static void insertionSort(int[] array){
+   public static < T extends Comparable< T > > void insertionSort(T[] array){
 
       for(int i = 1; i < array.length; ++i){
-         int key = array[i];
+         T key = array[i];
          int j = i - 1;
 
-         while(j > -1 && array[j] >  key){
+         while(j > -1 && array[j].compareTo(key) > 0){
             array[j+1] = array[j];
             --j;
          }//end while loop
@@ -52,16 +52,16 @@ public class DavesSearch{
 
    /*
     *     Takes an array of int and sorts it in descending order
-    *    TODO: have method take any primitave type
+    *
     */
 
-   public static int[] insertionSortD(int[] array){
+   public static < T extends Comparable< T > > void insertionSortD(T[] array){
 
       for(int i = 1; i < array.length; ++i){
-         int key = array[i];
+         T key = array[i];
          int j = i - 1;
 
-         while(j > -1 && array[j] <  key){
+         while(j > -1 && array[j].compareTo(key) <  0){
             array[j+1] = array[j];
             --j;
          }//end while loop
@@ -69,8 +69,6 @@ public class DavesSearch{
          array[j+1] = key;
 
       }//end for loop
-
-      return array;
 
    }//end insertionSortD
 
