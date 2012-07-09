@@ -25,20 +25,21 @@
  *    THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+
 public class ToolsTest{
 
    public static void main(String[] args){
 
       //test insertion sorts
       Integer[] array = {8, 10, 5, 87, 56, 12, 54, 23, 100, 1, 7, 99};
-      DavesSearch.insertionSort(array);
+      DSearch.insertionSort(array);
       for(Integer x : array){
          System.out.printf("%d ",x);
       }
 
       System.out.println();
 
-      DavesSearch.insertionSortD(array);
+      DSearch.insertionSortD(array);
       for(Integer x : array){
          System.out.printf("%d ",x);
       }
