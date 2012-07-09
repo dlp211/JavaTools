@@ -30,22 +30,28 @@ public class ToolsTest{
    public static void main(String[] args){
 
       //test insertion sorts
-      int[] array = {8, 10, 5, 87, 56, 12, 54, 23, 100, 1, 7, 99};
+      Integer[] array = {8, 10, 5, 87, 56, 12, 54, 23, 100, 1, 7, 99};
       DavesSearch.insertionSort(array);
-      for(int x : array){
+      for(Integer x : array){
          System.out.printf("%d ",x);
       }
 
       System.out.println();
 
       DavesSearch.insertionSortD(array);
-      for(int x : array){
+      for(Integer x : array){
          System.out.printf("%d ",x);
       }
 
       System.out.println();
 
       //end insertion sort tests
+
+
+
+      StarChar star = new StarChar();
+      star.getString("Hello World Encyclopedia and then i went to georgia the quick brown fox jumps over the lazy dog");
+
 
    }//end of method main
 }//end class ToolsTest
