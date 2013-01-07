@@ -166,4 +166,48 @@ public class IO {
       }
    }
 
+   public char readChar(String prompt) {
+
+      String val;
+
+      while(true) {
+
+         try {
+            val = input.readLine();
+            if(val.length() != 1)
+               continue;
+            else
+               return val.charAt(0);
+         } catch(IOException e) {
+            //should never execute
+            System.err.println("Unexpected IO Error: " + e);
+         }
+         System.out.println("Not a valid char: ");
+      }
+   }
+
+   public boolean readBool(String prompt) {
+
+      String val;
+
+      while(true) {
+
+         try {
+            val = input.readLine.toLowerCase();
+
+            if(val.equals("yes") || val.equals("y") || 
+               val.equals("t") || val.equals("true"))
+               return true;
+            else if(val.equals("no") || val.equals("n") ||
+               val.equals("f") || val.equals("false"))
+               return false;
+            else
+               continue;
+         } catch(IOException e) {
+            System.err.println("Unexpected IO error: " + e);
+         }
+
+         System.out.print("Not a valid boolean: ");
+      }
+   }
 }
