@@ -45,6 +45,10 @@ public class IO {
       //should never be called
    }
 
+   /***************************************************************************
+    *NUMBERS - Imteger Types int, long, byte                                  *
+    ***************************************************************************/
+
    public static int readInt(Sting prompt) {
 
        while(true) {
@@ -105,6 +109,59 @@ public class IO {
             return Integer.parseInt(strInput);
          } catch(Exception e) {
            System.err.println("Not a valid number: ");
+         }
+      }
+   }
+
+   /***************************************************************************
+    *NUMBERS - Floating Point Types double, float                             *                                                              *
+    ***************************************************************************/
+
+   public static double readDouble(String prompt) {
+
+      while(true) {
+         try {
+            System.out.print(prompt + " ");
+            return Double.parseDouble(input.readLine());
+         } catch(NumberFormatException e) {
+            System.err.println("Not a valid double: ");
+         } catch(IOException e) {
+            //should never execute
+            System.err.println("Unexpected IO Error: " + e);
+         }
+      }
+   }
+
+   public static float readFloat(String prompt) {
+
+      while(true) {
+
+         try {
+            System.out.print(prompt + " ");
+            return Float.valueOf(input.readLine());
+         } catch(NumberFormatException e) {
+            System.err.println("Not a valid double: ");
+         } catch(IOException e) {
+            //should never execute
+            System.err.println("Unexpected IO Error: " + e);
+         }
+      }
+   }
+
+   /***************************************************************************
+    *LETTERS - Types String, char                                             *                                                              *
+    ***************************************************************************/
+
+   public String readString(String prompt) {
+
+      while(true) {
+
+         try {
+            System.out.print(prompt + " ");
+            return input.readLine();
+         } catch(IOException e) {
+            //should never execute
+            System.err.println("Unexpected IO Error: " + e);
          }
       }
    }
