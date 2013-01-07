@@ -73,6 +73,20 @@ public class IO {
       }
    }
 
+   public static byte readByte(String prompt) {
+
+      while (true) {
+         try {
+            return Byte.parseByte(input.readLine());
+         } catch(NumberFormatException e) {
+            System.out.print("Not a valid byte: ");
+         } catch(IOException e) {
+            //should never execute
+            System.err.println("Unexpected IO Error " + e);
+         }
+      }
+   }
+
    public static int readHiddenInt(String prompt) {
 
       Console console = System.console();
