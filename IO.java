@@ -42,22 +42,35 @@ public class IO {
 
    public static int readInt(Sting prompt) {
 
-      int numberInput;
-
        while(true) {
 
          try {
             System.out.print(prompt + " ");
-            numberInput = Integer.parseInt(input.readLine());
-            break;
+            return Integer.parseInt(input.readLine());
          } catch(NumberFormatException e){
             System.err.print("Not a valid integer: ");
          } catch(IOException e) {
             //should never execute
-            System.err.println("Unexpected IO Error" + e);
+            System.err.println("Unexpected IO Error " + e);
          }
       }
 
+   }
+
+    public static long readLong(String prompt) {
+
+      while(true) {
+
+         try {
+            System.out.print(prompt + ": ");
+            return Long.pareLong(input.readLine());
+         } catch(NumberFormatException e) {
+            System.err.print("Not a valid long: ");
+         } catch (IOException e) {
+            //should never execute
+            System.err.println("Unexpected IO Error " + e);
+         }
+      }
    }
 
    public static int readHiddenInt(String prompt) {
