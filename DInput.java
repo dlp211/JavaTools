@@ -1,5 +1,5 @@
 /*
- *    FILE: DInput.java
+ *    FILE: IO.java
  *    AUTHOR: David L Patrzeba
  *    E-MAIL: david.patrzeba@gmail.com
  *
@@ -27,29 +27,40 @@
  */
 
 import java.io.Console;
+import java.io.InputStreamBuffer;
+import java.io.BufferedReader;
+import java.io.IOException;
 
-public class DInput {
+public class IO {
 
-   public static int getInt(Sting prompt) {
+   private static BufferedReader input = 
+      new BufferedReader(new InputStreamBuffer(System.in));
 
-      Console console = System.console();
+   private IO() {
+      //should never be called
+   }
+
+   public static int readInt(Sting prompt) {
+
       int numberInput;
 
        while(true) {
 
          try {
-            numberInput = Integer.parseInt(console.readLine(prompt + ": "));
+            System.out.print(prompt + " ");
+            numberInput = Integer.parseInt(input.readLine());
             break;
          } catch(NumberFormatException e){
-            System.err.print("Not a valid number: ");
+            System.err.print("Not a valid integer: ");
          } catch(IOException e) {
+            //should never execute
             System.err.println("Unexpected IO Error" + e);
          }
       }
 
    }
 
-   public static int getHiddenInt(String prompt) {
+   public static int readHiddenInt(String prompt) {
 
       Console console = System.console();
       char[] chInput;
